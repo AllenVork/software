@@ -1,6 +1,6 @@
 # Cygwin with git for windows
 
-从 unbuntu 转到 windows，git 出现各种乱码问题，而且 ubuntu 上面的一些命令也无法沿用。 出于上面两个考虑，我使用 Cygwin 来执行 git 命令。
+从 unbuntu 转到 windows，git 使用中文出现各种乱码问题，而且 ubuntu 上面的一些命令也无法沿用。 出于上面两个考虑，我使用 Cygwin 来执行 git 命令。
 ## 1.安装 Cygwin
 1. 下载 https://cygwin.com/install.html （上面提供了32/64位的  Cygwin 按需下载)。
 2. 安装过程中会出现这个窗口，随便选一个就行了，我用的第一个：![img](img/web.png)
