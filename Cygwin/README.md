@@ -2,7 +2,7 @@
 
 从 unbuntu 转到 windows，git 出现各种乱码问题，而且 ubuntu 上面的一些命令也无法沿用。 出于上面两个考虑，我使用 Cygwin 来执行 git 命令。
 ## 1.安装 Cygwin
-1. 下载 https://cygwin.com/install.html （上面提供了32/64位的  Cygwin 按需下载。
+1. 下载 https://cygwin.com/install.html （上面提供了32/64位的  Cygwin 按需下载)。
 2. 安装过程中会出现这个窗口，随便选一个就行了，我用的第一个：![img](img/web.png)
 3. 下面是所需要安装的一下库，最快找到这些软件的方法是选择“Category”，然后搜索所需要的库，然后在 Devel Default 分类中找。![img](img/lib.png)
 4. 可以运行 cygcheck -c cygwin 来检测是否安装成功。 
@@ -46,7 +46,7 @@ fi
 
 这样就大功告成了。
 
-## 4. 设置 dos2unix 的默认目录
+## 4. 设置 Cygwin 的默认目录
 1. 打开 Cygwin 的 .bashrc (一般 git 安装完成后会在 C:\用户\用户名 里创建 .bashrc 文件，但 Cygwin 是在自己的安装目录下的 \home\username里，譬如我的就是 D:\git\home\zhangruofan）
 2. 在最后一行添加： cd <默认目录>。譬如我的就是 cd D:\projects\meizu\GameCenter
 3. 双击桌面上行的 Cygwin 图标打开看是否自动定位到自己设置的目录中
