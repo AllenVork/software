@@ -16,6 +16,7 @@
  + 双击那个“默认”，能够修改数值数据，里面输入Cygwin的启动脚本路径，比如我的“D:\Dev\Cygwin\Cygwin.bat %V”，把引号去掉，写好确定，**请注意最后的 %V。**
  + OK，现在在文件夹中点开右键，你就可以看到多了一个名字叫“OpenCygwin”的选项。别急着点，肯定会提示错误，继续下一步。
  
+
 2. 第二步：修改Cygwin启动脚本和环境变量
  + 修改 Cygwin.bat 文件，如下：
 ```html
@@ -33,12 +34,21 @@ if [[ $_T == "" ]]; then
     export _T="c:/Users/Administrator"  
 fi  
 ```
+
+
 3. 如果此时能够右键在当前目录下打开 Cygwin 那么就恭喜你。若出现说 “.bash_profile 未预期的文件结尾”，则要用 dos2unix 转换下该文件的格式，继续往下看。
 
-## 使用 dos2unix 转换文件格式
+## 3. 使用 dos2unix 转换文件格式
 由于 windows 和 linux 的回车符不同，当你使用 windows 上的文本编辑器打开 .bash_profile 时，回车符被格式化了，就导致一场。下面教你采用 dos2unix 将文件格式转换回来：
 1. 下载 dos2unix
 2. 将下载下来的 dos2unix.exe 拷贝到 C:\Windows\System32 的根目录下即可使用 dos2unix 命令
 3. 运行 dos2unix -n .bash_profile .bash_profile 即可将文件转换回来（我直接使用 dos2unix .bash_profile 也可以）
 
 这样就大功告成了。
+
+## 4. 设置 dos2unix 的默认目录
+1. 打开 Cygwin 的 .bashrc (一般 git 安装完成后会在 C:\用户\用户名 里创建 .bashrc 文件，但 Cygwin 是在自己的安装目录下的 \home\username里，譬如我的就是 D:\git\home\zhangruofan）
+2. 在最后一行添加： cd <默认目录>。譬如我的就是 cd D:\projects\meizu\GameCenter
+3. 双击桌面上行的 Cygwin 图标打开看是否自动定位到自己设置的目录中
+
+**注意**：如果出现 “bash: $'\r': 未找到命令” 异常的话，还是和上面一样，要转换下格式： dos2unix .bashrc 即可。
