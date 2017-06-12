@@ -68,3 +68,27 @@ Meld 安装完成后，在 user 目录中（Cygwin 是在安装目录里，我�
 
 ```
 **注意**：path 为 meld.exe 所在的绝对路径，路径中的“/”不要用“\”。
+
+## 5. 将 Android Studio 的 Terminal 设置为 Cygwin
+1. 创建 Cygwin-AndroidStudio.bat 文件
+2. 输入以下内容，其中 C:\cygwin64\bin\bash 为你的 Cygwin 的 bash.exe 所在的目录
+ ```html
+ @echo off
+ set IDE=AndroidStudio
+ C:\cygwin64\bin\bash --login -i
+```
+3. 修改 .bashrc 文件, 目的是启动 Android Studio 后，自动切换到当前项目的目录中。注意修改完后转换格式。
+``` html
+if [ ! -z "${IDE}" -a "${IDE}" == "AndroidStudio" ]; then
+    cd $OLDPWD;
+fi
+```
+4. 修改 Android Studio 中的 Terminal 的路径为上面创建的 .bat 文件：![img](img/terminal.png)
+5. 重启 Android Studio
+
+**注意**: 要将 D:\cygwin 以及 D:\cygwin\bin 都配置到 PATH 中，否则会出现 command not found 异常。    
+
+如果 git 有问题，看 git 配置有没有问题：    
+![img](img/git.png)
+
+
