@@ -52,3 +52,19 @@ fi
 3. 双击桌面上行的 Cygwin 图标打开看是否自动定位到自己设置的目录中
 
 **注意**：如果出现 “bash: $'\r': 未找到命令” 异常的话，还是和上面一样，要转换下格式： dos2unix .bashrc 即可。
+
+## 5. 配置 Meld
+Meld 安装完成后，在 user 目录中（Cygwin 是在安装目录里，我的是 D:\cygwin\home\username）创建 .gitconfig 文件（windows 中创建该文件，文件名应该写 **.gitconfig.** (注意最后还要加一个点），然后加入以下内容：
+```html
+[diff]
+	tool = meld
+[difftool "meld"]
+	path = d:/software/melddiff/Meld.exe
+	keepBackup = false
+	trustExitCode = false
+	cmd = d:/software/melddiff/Meld.exe \"$(cygpath -w \"$LOCAL\")\" \"$(cygpath -w \"$REMOTE\")\"
+[difftool]
+	prompt = false
+
+```
+**注意**：path 为 meld.exe 所在的绝对路径，路径中的“/”不要用“\”。
