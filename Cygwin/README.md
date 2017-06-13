@@ -1,6 +1,5 @@
 # Cygwin with git for windows
 
-从 unbuntu 转到 windows，git 使用中文出现各种乱码问题，而且 ubuntu 上面的一些命令也无法沿用。 出于上面两个考虑，我使用 Cygwin 来执行 git 命令。
 ## 1.安装 Cygwin
 1. 下载 https://cygwin.com/install.html （上面提供了32/64位的  Cygwin 按需下载)。
 2. 安装过程中会出现这个窗口，随便选一个就行了，我用的第一个：![img](img/web.png)
@@ -91,4 +90,7 @@ fi
 如果 git 有问题，看 git 配置有没有问题：    
 ![img](img/git.png)
 
+## 6.乱码解决方案
+> + 使用 git status 出现中文乱码 "\346\226\260\345\273\272"
+> 解决方法：git config --global core.quotepath false
 
